@@ -1,0 +1,11 @@
+# Install packages
+
+! pip install pandas
+! pip install numpy
+
+# Import packages
+
+import numpy as np
+import pandas as pd
+
+
