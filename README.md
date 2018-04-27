@@ -1,6 +1,6 @@
 # DeepLearning in Computer Vision
 
-## Week 2: Excercise: 
+## Week 1: Excercise: 
 
 1. Download any color image file with PNG format from Internet (for those who have no idea about PNG file, please see the link: https://en.wikipedia.org/wiki/Portable_Network_Graphics )
 
