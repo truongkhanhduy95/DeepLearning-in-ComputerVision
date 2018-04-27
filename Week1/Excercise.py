@@ -11,24 +11,22 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import cv2
 
-def display_image(img, n_channel=3):
-    if n_channel == 4:
-        img_bgr = img[:, :, :3]
-        img_alpha = img[:, :, 3]
-        img_white = np.ones_like(img_bgr, dtype=np.uint8) * 255 # An image with all white
-        alpha_factor = img_alpha[:, :, np.newaxis].astype(np.float32) / 255.0
-        alpha_factor = np.concatenate((alpha_factor, alpha_factor, alpha_factor), axis=2)
+def invertAlpha(img):
+    base_img = img[:, :, :3]
+    alpha_img = img[:, :, 3]
+    white_img = np.ones_like(base_img, dtype=np.uint8) * 255 
+    alpha_factor = alpha_img[:, :, np.newaxis].astype(np.float32) / 255.0
+    alpha_factor = np.concatenate((alpha_factor, alpha_factor, alpha_factor), 2)
 
-        # Display the color image
-        img_base = img_bgr.astype(np.float32) * alpha_factor
-        img_white = img_white.astype(np.float32) * (1 - alpha_factor)
-        img = (img_base + img_white).astype(np.uint8)
-
-    cv2.imshow("image", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    img_base = base_img.astype(np.float32) * alpha_factor
+    white_img = white_img.astype(np.float32) * (1 - alpha_factor)
+    img = (img_base + white_img).astype(np.uint8)
     return img
 
+def display(img):
+    plt.imshow(cv2.cvtColor(img_new,cv2.COLOR_BGR2RGB))
+    plt.show()
+    
 #Load image from folder
 img = cv2.imread('/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week1/images/image1.png',-1)
 
@@ -42,11 +40,16 @@ img = cv2.imread('/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLear
 # print(new)
 # bin[:,:,0] = img[:,:,0]
 #RGB_img = 
-# plt.imshow(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
-# plt.show()
-img_new = display_image(img, 4)
 
 #Display image
-# cv2.imshow('image',bin)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+display(invertAlpha(img))
+
+#Convert the color image to a gray image, save to a file
+gray_img = cv2.cvtColor(invertAlpha(img), cv2.COLOR_BGR2GRAY)
+path = "/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week1/images/gray_image.png"
+cv2.imwrite(path, gray_img)
+print("Write Gray-scale Image to file: ", path)
+
+#Display gray image
+img_gray_display = cv2.imread(path, cv2.IMREAD_UNCHANGED)
+display(img_gray_display)
