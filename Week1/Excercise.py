@@ -1,10 +1,3 @@
-# Install packages
-! pip install --upgrade pip
-! pip install pandas
-! pip install --upgrade numpy
-! pip install opencv-python
-! pip install --upgrade opencv-python
-
 # Import packages
 import numpy as np
 from matplotlib import pyplot as plt
@@ -27,8 +20,27 @@ def display(img):
     plt.imshow(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
     plt.show()
     
+def applyGaussian(img):
+    img_gaussian = list()
+    img_background = None
+    for i in range(1, 5):
+        img_row = None
+        for s in range(1, 5):
+            kernel_size = 2*i + 1
+            img_blur = cv2.GaussianBlur(img, (kernel_size, kernel_size), sigmaX=s)
+            img_gaussian.append(img_blur)
+            if img_row is None:
+                img_row = img_blur
+            else:
+                img_row = np.hstack((img_row, img_blur))
+        if img_background is None:
+            img_background = img_row
+        else:
+            img_background = np.vstack((img_background, img_row))
+    return img_background
+    
 # Load image from folder
-img = cv2.imread('/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week1/images/image1.png',-1)
+img = cv2.imread('images/image1.png',-1)
 
 # alpha = img[:,:,3] #extract alpha channel
 # print(alpha)
@@ -46,7 +58,7 @@ display(invertAlpha(img))
 
 # Convert the color image to a gray image, save to a file
 gray_img = cv2.cvtColor(invertAlpha(img), cv2.COLOR_BGR2GRAY)
-path = "/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week1/images/gray_image.png"
+path = "images/gray_image.png"
 cv2.imwrite(path, gray_img)
 
 # Display gray image
@@ -61,7 +73,7 @@ img_resize = cv2.resize(img, (256, 256), cv2.INTER_LINEAR)
 display(invertAlpha(img_resize))
 
 # Save to a file
-path_resize = "/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week1/images/image_resize.png"
+path_resize = "images/image_resize.png"
 cv2.imwrite(path_resize, img_resize)
 
 # Resize the gray image to the  size of 256 (pixels) x 256 (pixels)
@@ -72,5 +84,11 @@ plt.imshow(gray_img_resize,cmap='gray')
 plt.show()
 
 # Save to a file
-path_gray_resize = "/Users/truongkhanhduy/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week1/images/gray_image_resize.png"
+path_gray_resize = "images/gray_image_resize.png"
 cv2.imwrite(path_gray_resize, gray_img_resize)
+
+# Apply Gaussian filter with different kernel sizes and sigma
+img_test = cv2.imread('images/test.png',-1)
+plt.imshow(applyGaussian(img_test))
+plt.show()
+
