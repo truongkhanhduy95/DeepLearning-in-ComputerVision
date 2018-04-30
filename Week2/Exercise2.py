@@ -20,10 +20,12 @@ plt.show()
 sns.pairplot(df, hue='species')
 
 # Split dataset into training data and testing data 
-all_inputs = df[['sepal_length','sepal_width','petal_lenght','petal_width']].values
-all_clases = df[['species']].values
+all_inputs = df[['sepal_length','sepal_width','petal_length','petal_width']].values
+all_classes = df[['species']].values
 
-tree.train
+(train_inputs, test_inputs, train_classes, test_classes) = cross_validation.train_test_split(all_inputs, all_classes, train_size=0.7, random_state=1)
+
 # Build a decision tree classifier to classify this dataset
-clf = tree.DecisionTreeClassifier()
-
+dtc = tree.DecisionTreeClassifier()
+dtc.fit(train_inputs, train_classes)
+dtc.score(test_inputs, test_classes)
