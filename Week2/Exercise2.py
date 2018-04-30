@@ -23,9 +23,14 @@ sns.pairplot(df, hue='species')
 all_inputs = df[['sepal_length','sepal_width','petal_length','petal_width']].values
 all_classes = df[['species']].values
 
-(train_inputs, test_inputs, train_classes, test_classes) = cross_validation.train_test_split(all_inputs, all_classes, train_size=0.7, random_state=1)
-
+(train_inputs, test_inputs, train_classes, test_classes) = cross_validation.train_test_split(all_inputs, all_classes, train_size=0.7)
 # Build a decision tree classifier to classify this dataset
 dtc = tree.DecisionTreeClassifier()
 dtc.fit(train_inputs, train_classes)
 dtc.score(test_inputs, test_classes)
+
+# Modify parameters/hyper-parameters to get the best result
+best_dtc = tree.DecisionTreeClassifier(criterion = 'gini',
+ max_depth=4, max_features=2,min_samples_leaf = 1,min_samples_split=2, splitter= 'best')
+best_dtc.fit(train_inputs, train_classes)
+best_dtc.score(test_inputs, test_classes)
