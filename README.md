@@ -1,4 +1,4 @@
-# DeepLearning in Computer Vision
+# Deep Learning in Computer Vision
 
 ## Week 1: Image Processing in Computer Vision
 
