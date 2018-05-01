@@ -20,5 +20,12 @@ model = svm.SVC()
 model.fit(train_inputs, train_classes)
 
 y_pred = model.predict(test_inputs)
-print(model.score(test_inputs,test_classes.ravel())) #0.9777777777777777 Accuracy
+print(model.score(test_inputs,test_classes.ravel())) #0.9555555555555556 Accuracy
+
+# Modify parameters/hyper-parameters to get the best result
+modify_model = svm.SVC(kernel='linear', degree=3)
+modify_model.fit(train_inputs, train_classes)
+
+y_pred = modify_model.predict(test_inputs)
+print(modify_model.score(test_inputs,test_classes.ravel())) #0.9777777777777777 Accuracy
 
