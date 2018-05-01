@@ -1,20 +1,24 @@
 # Import packages
-import seaborn as sns
 import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
 import cv2
+from sklearn import svm,cross_validation
 
 # Visualize the dataset
 df = pd.read_csv('dataset/iris.csv')
 print(df)
 
-# Explore  data
-df.isnull().any()
-df.dtypes
-df.describe()
-df['petal_width'].plot.hist()
-plt.show()
-sns.pairplot(df, hue='species')
+# Split dataset into training data and testing data 
+all_inputs = df[['sepal_length','sepal_width','petal_length','petal_width']].values
+all_classes = df[['species']].values
 
-# Build a decision tree classifier to classify this dataset
+(train_inputs, test_inputs, train_classes, test_classes) = cross_validation.train_test_split(all_inputs, all_classes, train_size=0.7)
+
+# Build a SVM classifier to classify this dataset
+model = svm.SVC()
+model.fit(train_inputs, train_classes)
+
+y_pred = model.predict(test_inputs)
+print(model.score(test_inputs,test_classes.ravel())) #0.9777777777777777 Accuracy
+
