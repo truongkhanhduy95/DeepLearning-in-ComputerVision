@@ -1,0 +1,4 @@
+ * K-means clustering is an unsupervised learning algorithm that helps us uncover interesting groupings of people, things or behavior in a given set of data by splitting the data into k groups that are closest to k centriods; in other words it randomly picks k controids (central points), assigns each data point to the centroid that its closest to and recomputes the controids based on the average position of each centroid point until the points stop changing assignments as a result of a given threshold.
+ 
+ * K Nearest Neighbors is a supervised learning algorithm which is used to classify new data points based on a distance to known data. The algorithm is non-parametric meaning that it does not
+make any assumptions on the underlying data distribution and bases its classification upon how closely features resemble our training set.
