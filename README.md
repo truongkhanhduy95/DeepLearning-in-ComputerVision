@@ -2,6 +2,8 @@
 
 ## Week 0: Linear Algebra and Calculus
 
+Exercise: 
+Given that x is a vector in R3 and the tail of x is at the origin. Where is the locus of the tip of vector x such that the norm L1 of x is equal to 4. What is the lotus if x is a vector in R4 ?
 
 ## Week 1: Image Processing in Computer Vision
 
