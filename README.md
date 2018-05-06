@@ -1,5 +1,8 @@
 # Deep Learning in Computer Vision
 
+## Week 0: Linear Algebra and Calculus
+
+
 ## Week 1: Image Processing in Computer Vision
 
 Exercise: 
