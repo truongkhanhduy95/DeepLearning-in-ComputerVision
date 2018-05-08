@@ -54,3 +54,24 @@ Exercise:
 5. What’s the trade-off between bias and variance?
 6. What is the difference between supervised and unsupervised machine learning?
 7. How is KNN different from k-means clustering?
+
+## Week 3: Edge Detection, Image Tracking
+
+1. Download any color image from Internet and save it to your computer
+
+2. Write program to complete the following works:
+	* Convert the downloaded image from 1. to a grayscale image
+	* Apply Canny Edge detector to the grayscale image with fixed threshold as your choice 		(https://en.wikipedia.org/wiki/Canny_edge_detector)
+	* Write a small application to find the Canny edge detection whose threshold values can be varied using two trackbars
+
+3. Take a break
+
+4. Review the watershed algorithm (https://en.wikipedia.org/wiki/Watershed_(image_processing))
+
+5. Write program to complete the following works:
+	* Download any color image from Internet and save it to your computer
+	* Convert the downloaded image to a grayscale image
+	* Apply watershed algorithm to the above image and observe outputs with different parameters
+	
+You can refer to the following to understand more about this algorithm: http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershed/py_watershed.html
+
