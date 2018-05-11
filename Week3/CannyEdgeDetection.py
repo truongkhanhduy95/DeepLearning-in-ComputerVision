@@ -1,3 +1,5 @@
+# !pip install opencv-contrib-python
+
 import numpy as np
 from matplotlib import pyplot as plt
 import cv2
@@ -10,7 +12,7 @@ def displayGrayscaleImage(image):
 def nothing(x):
   pass
     
-imagePath = '/Users/duytruong/Desktop/Project/Personal Github/DeepLearning-in-ComputerVision/Week3/picture/dog.jpg'
+imagePath = 'picture/dog.jpg'
 
 img = cv2.imread(imagePath,0)
 
