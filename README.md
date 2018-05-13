@@ -57,6 +57,7 @@ Exercise:
 
 ## Week 3: Edge Detection, Image Tracking
 
+Exercise: 
 1. Download any color image from Internet and save it to your computer
 
 2. Write program to complete the following works:
