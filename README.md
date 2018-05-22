@@ -74,5 +74,5 @@ Exercise:
 	* Convert the downloaded image to a grayscale image
 	* Apply watershed algorithm to the above image and observe outputs with different parameters
 	
-You can refer to the following to understand more about this algorithm: http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershed/py_watershed.html
+You can refer to the following to understand more about this algorithm: http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershed/py_watershed.html.
 
