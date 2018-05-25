@@ -76,3 +76,14 @@ Exercise:
 	
 You can refer to the following to understand more about this algorithm: http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershed/py_watershed.html.
 
+## Week 4: Tensorflow/Keras
+
+Exercise: 
+1. Install Tensorflow. Instruction: https://www.tensorflow.org/install/	
+2. Perform image recognition using pre-trained models. Instruction: https://www.tensorflow.org/tutorials/image_recognition
+Try different networks:
+	* AlexNet
+	* VGG
+	* Inception
+	* ResNet
+
