@@ -91,3 +91,6 @@ Try different networks:
 
 Exercise: 
 Using Google Colab, open the Jupiter notebook file, try to modify each layer's hyperparameters,	dropout connection between layers to get better model.
+
+
+## Week 6: Object detection / Sematic segmentation
