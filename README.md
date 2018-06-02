@@ -87,3 +87,7 @@ Try different networks:
 	* Inception
 	* ResNet
 
+## Week 5: Tensorflow exercise
+
+Exercise: 
+Using Google Colab, open the Jupiter notebook file, try to modify each layer's hyperparameters,	dropout connection between layers to get better model.
