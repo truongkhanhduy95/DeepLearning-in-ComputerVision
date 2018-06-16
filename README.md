@@ -96,3 +96,5 @@ Using Google Colab, open the Jupiter notebook file, try to modify each layer's h
 ## Week 6: Object detection / Sematic segmentation
 
 ## Week 7: Transfer learning
+
+## Week 8: Applications
