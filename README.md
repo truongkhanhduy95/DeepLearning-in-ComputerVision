@@ -98,3 +98,5 @@ Using Google Colab, open the Jupiter notebook file, try to modify each layer's h
 ## Week 7: Transfer learning
 
 ## Week 8: Applications
+
+## Week 9: Transfer learning tutorial
